@@ -41,24 +41,6 @@
             color: white;
             text-shadow: 0 0 10px #b026ff;
         }
-
-        .buttons {
-            margin-top: 40px;
-        }
-
-        button {
-            background-color: #b026ff;
-            border: none;
-            color: black;
-            padding: 10px 20px;
-            margin: 5px;
-            cursor: pointer;
-            font-weight: bold;
-        }
-
-        button:hover {
-            background-color: #d580ff;
-        }
     </style>
 </head>
 
@@ -66,41 +48,13 @@
 
     <h1>LinkSite</h1>
 
-    <div class="container" id="linkContainer">
+    <div class="container">
+
         <div class="link">1. <a href="https://google.com" target="_blank">Google</a></div>
         <div class="link">2. <a href="https://youtube.com" target="_blank">YouTube</a></div>
         <div class="link">3. <a href="https://github.com" target="_blank">GitHub</a></div>
+
     </div>
-
-    <div class="buttons">
-        <button onclick="addLink()">Add Link</button>
-        <button onclick="removeLink()">Remove Last Link</button>
-    </div>
-
-    <script>
-        function addLink() {
-            let name = prompt("Enter link name:");
-            let url = prompt("Enter link URL:");
-
-            if(name && url) {
-                let container = document.getElementById("linkContainer");
-                let number = container.children.length + 1;
-
-                let newLink = document.createElement("div");
-                newLink.className = "link";
-                newLink.innerHTML = number + ". <a href='" + url + "' target='_blank'>" + name + "</a>";
-
-                container.appendChild(newLink);
-            }
-        }
-
-        function removeLink() {
-            let container = document.getElementById("linkContainer");
-            if(container.children.length > 0) {
-                container.removeChild(container.lastElementChild);
-            }
-        }
-    </script>
 
 </body>
 </html>
